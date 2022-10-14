@@ -1,28 +1,42 @@
-node{
-     
-    stage('SCM Checkout'){
-        git credentialsId: 'GIT_CREDENTIALS', url:  'https://github.com/simonLegah/UnityProject.git',branch: 'master'
-    }
-    
-    stage(" Maven Clean Package"){
-      def mavenHome =  tool name: "Maven-3.6.1", type: "maven"
-      def mavenCMD = "${mavenHome}/bin/mvn"
-      sh "${mavenCMD} clean package"
-      
-    } 
-    
-    
-    stage('Build Docker Image'){
-        sh 'docker build -t 251219981642/spring-boot-mongo .'
-    }
-    
-    stage('Push Docker Image'){
-        withCredentials([string(credentialsId: 'DOKCER_HUB_PASSWORD', variable: 'DOKCER_HUB_PASSWORD')]) {
-          sh "docker login -u 251219981642 -p ${DOKCER_HUB_PASSWORD}"
+pipeline{
+     agent any
+     stages{
+        stage('SCM Checkout'){
+            steps{
+                git credentialsId: 'GIT_CREDENTIALS', url:  'https://github.com/kishorethakur1998/3-tier_app.git',branch: 'master'
+            }
         }
-        sh 'docker push 251219981642/spring-boot-mongo'
-     }
+
+        
+        stage(" Maven Clean Package"){
+            steps{
+                #install maven in jenkins cli
+                sh "mvn clean package"
+            }      
+        } 
+        
+        
+        stage('Build Docker Image'){
+            steps{
+                sh 'docker build . -t 251219981642/spring-boot-mongo + ":V${BUILD_NUMBER}" '
+            }
+        }
+        
+        stage('Push Docker Image'){
+            steps{
+                withCredentials([string(credentialsId: 'DOKCER_HUB_PASSWORD', variable: 'DOKCER_HUB_PASSWORD')]) {
+                    sh "docker login -u 251219981642 -p ${DOKCER_HUB_PASSWORD}"
+                }
+                sh 'docker push 251219981642/spring-boot-mongo + ":V${BUILD_NUMBER}"'
+            }
+        }
+        stage('Deploy to kubernetes cluster'){
+            agent {label "KOPS"}
+                steps{
+                    sh 'kubectl apply -f springbootapp.yml'
+                }
+            }
      
-    
+    }
      
 }
