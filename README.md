@@ -1,3 +1,34 @@
-Hello
-Here we have springboot application with mongo database
-To deploy the application using docker compose file 
+# Build Project Using Maven
+
+Maven is java based build tool to generate executable 
+
+packages(jar, ear,war) for java based projects.
+
+```bash
+mvn clean package
+```
+
+## Create Docker Image
+Docker is a continerization tool.Using docker we can deploy our applications as 
+
+containers using docker images. Containers contains application code and also the softwares,
+
+config files whatever is required for our application to run.
+
+Create docker image using Dockerfile
+
+
+```docker
+docker build -t 251219981642/spring-boot-mongo .
+```
+
+## Deploy Application Using Docker Compose 
+
+```docker-compose 
+docker-compose up -d 
+```
+
+## List Docker Containers
+```docker
+docker ps -a
+```
