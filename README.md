@@ -34,3 +34,8 @@ docker-compose up -d
 ```docker
 docker ps -a
 ```
+
+## To launch SpringBoot application in Kubenetes
+Files Required: Dockerfile, Jenkinsfile and springbootapp.yml (deployment and service yaml file of application and mongo database )
+
+
