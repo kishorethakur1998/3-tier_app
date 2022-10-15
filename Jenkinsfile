@@ -18,7 +18,7 @@ pipeline{
         
         stage('Build Docker Image'){
             steps{
-                sh 'docker build . -t 251219981642/spring-boot-mongo + ":V${BUILD_NUMBER}" '
+                sh 'docker build . -t 251219981642/spring-boot-mongo'
             }
         }
         
@@ -27,7 +27,7 @@ pipeline{
                 withCredentials([string(credentialsId: 'DOKCER_HUB_PASSWORD', variable: 'DOKCER_HUB_PASSWORD')]) {
                     sh "docker login -u 251219981642 -p ${DOKCER_HUB_PASSWORD}"
                 }
-                sh 'docker push 251219981642/spring-boot-mongo + ":V${BUILD_NUMBER}"'
+                sh 'docker push 251219981642/spring-boot-mongo'
             }
         }
         stage('Deploy to kubernetes cluster'){
