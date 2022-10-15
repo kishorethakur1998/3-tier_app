@@ -38,5 +38,9 @@ docker ps -a
 ## To launch SpringBoot application in Kubenetes
 Files Required: Dockerfile, Jenkinsfile and springbootapp.yml (deployment and service yaml file of application and mongo database )
 
-Use **AWS** EC2 instances for **Jenkins-server** and **KOPS-server**
+Use **AWS** EC2 instances for **Jenkins-server** and **Kops-server**
 
+Create kops cluster using 
+```kops
+kops create cluster --name=clustername --state=s3://S3bucketname --zones=east-us-1a,east-us-1b --node-count=2 --node-size=t2.micro --master-size=t2.medium --dns-zone= DNS name
+```
