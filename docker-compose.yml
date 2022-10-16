@@ -21,7 +21,7 @@ services:
     restart: always
 
   web:
-    image: webimage:latest
+    image: 251219981642/webimage:latest
     ports:
       - "8081:8081"
 volumes:
