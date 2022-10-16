@@ -5,7 +5,7 @@
 docker-compose up -d 
 ```
 ## SpringBoot application snapshot
-![springboot](https://user-images.githubusercontent.com/86631180/196008823-7b0e698d-7ab4-4cb9-a9ef-e56bf7e97638.png)
+![spring](https://user-images.githubusercontent.com/86631180/196008823-7b0e698d-7ab4-4cb9-a9ef-e56bf7e97638.png)
 
 ## List Docker Containers
 ```docker
