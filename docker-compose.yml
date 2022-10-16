@@ -1,7 +1,7 @@
 version: '3'
 services:
   springapp:
-    image: appimage:latest
+    image: 251219981642/appimage:latest
     restart: always
     environment:
       - MONGO_DB_HOSTNAME=mongo
@@ -23,6 +23,6 @@ services:
   web:
     image: webimage:latest
     ports:
-      - "80:80"
+      - "8081:8081"
 volumes:
   mongodb: {}
