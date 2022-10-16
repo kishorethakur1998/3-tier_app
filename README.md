@@ -1,26 +1,3 @@
-# Build Project Using Maven
-
-Maven is java based build tool to generate executable 
-
-packages(jar, ear,war) for java based projects.
-
-```bash
-mvn clean package
-```
-
-## Create Docker Image
-Docker is a continerization tool.Using docker we can deploy our applications as 
-
-containers using docker images. Containers contains application code and also the softwares,
-
-config files whatever is required for our application to run.
-
-Create docker image using Dockerfile
-
-
-```docker
-docker build -t appimage .
-```
 
 ## Deploy Application Using Docker Compose 
 
@@ -38,31 +15,31 @@ docker ps -a
 ## To launch SpringBoot application in Kubenetes
 Files Required: Dockerfile, Jenkinsfile and springbootapp.yml (deployment and service yaml file of application and mongo database )
 
-## Step 1
+### Step 1
 
 Use **AWS** EC2 instances for **Jenkins-server** and **Kops-server**
 
-## Step 2
+### Step 2
 Create kops cluster using 
 
 ```kops
 kops create cluster --name=clustername --state=s3://S3bucketname --zones=east-us-1a,east-us-1b --node-count=2 --node-size=t2.micro --master-size=t2.medium --dns-zone= DNS name
 ```
-## step 3
+##3 step 3
 
 Update cluster
 
 ```kops
 kops update cluster --name=clustername --state=s3://S3bucketname --yes --admin
 ```
-## step 4
+### step 4
 
 Wait for 5-6 min and validate cluster
 
 ```kops
 kops validate cluster --name=clustername --state=s3://S3bucketname --yes --admin
 ```
-## step 5
+### step 5
 
 Login to Jenkins GUI using **localhost:8080** in web browser
 
