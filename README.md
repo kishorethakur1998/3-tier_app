@@ -1,7 +1,7 @@
 
-## Deploy Application Using Docker Compose ![Screenshot from 2022-10-17 21-56-12](https://user-images.githubusercontent.com/86631180/196239233-7feea525-1069-4c30-93f1-2a99594e1191.png)
+## Deploy Application Using Docker Compose
 
-```docker-compose 
+```docker
 docker-compose up -d 
 ```
 ## SpringBoot application snapshot
