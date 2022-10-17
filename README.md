@@ -6,6 +6,10 @@ docker-compose up -d
 ```
 ## SpringBoot application snapshot
 ![spring](https://user-images.githubusercontent.com/86631180/196041621-ad0b30bb-a2ba-4039-ab16-52b443b1a1e9.png)
+![Screenshot from 2022-10-17 21-56-12](https://user-images.githubusercontent.com/86631180/196239233-7feea525-1069-4c30-93f1-2a99594e1191.png)
+
+## MongoDB data stored at /data/db inside mongo container
+![Screenshot from 2022-10-17 21-56-12](https://user-images.githubusercontent.com/86631180/196239233-7feea525-1069-4c30-93f1-2a99594e1191.png)
 
 ## List Docker Containers
 ```docker
