@@ -1,12 +1,11 @@
 
-## Deploy Application Using Docker Compose 
+## Deploy Application Using Docker Compose ![Screenshot from 2022-10-17 21-56-12](https://user-images.githubusercontent.com/86631180/196239233-7feea525-1069-4c30-93f1-2a99594e1191.png)
 
 ```docker-compose 
 docker-compose up -d 
 ```
 ## SpringBoot application snapshot
 ![spring](https://user-images.githubusercontent.com/86631180/196041621-ad0b30bb-a2ba-4039-ab16-52b443b1a1e9.png)
-![Screenshot from 2022-10-17 21-56-12](https://user-images.githubusercontent.com/86631180/196239233-7feea525-1069-4c30-93f1-2a99594e1191.png)
 
 ## MongoDB data stored at /data/db inside mongo container
 ![Screenshot from 2022-10-17 21-56-12](https://user-images.githubusercontent.com/86631180/196239233-7feea525-1069-4c30-93f1-2a99594e1191.png)
@@ -46,7 +45,7 @@ kops validate cluster --name=clustername --state=s3://S3bucketname --yes --admin
 #### Step 5
 
 Login to Jenkins GUI using **localhost:8080** in web browser
-
+![Screenshot from 2022-10-17 21-56-12](https://user-images.githubusercontent.com/86631180/196239233-7feea525-1069-4c30-93f1-2a99594e1191.png)
 Allow kops instance to inbound jenkins instance using security group
 
 Create node and add Kops as a slave in Jenkins.
