@@ -1,9 +1,12 @@
 
 ## Deploy Application Using Docker Compose
 
+Run docker compose command
+
 ```docker
 docker-compose up -d 
 ```
+Application URL
 
 ```docker
 http://localhost:8081
