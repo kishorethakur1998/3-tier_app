@@ -4,6 +4,11 @@
 ```docker
 docker-compose up -d 
 ```
+
+```docker
+http://localhost:8081
+```
+
 ## SpringBoot application snapshot
 ![spring](https://user-images.githubusercontent.com/86631180/196041621-ad0b30bb-a2ba-4039-ab16-52b443b1a1e9.png)
 
