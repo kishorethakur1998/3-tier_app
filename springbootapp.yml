@@ -51,7 +51,7 @@ spec:
       storage: 16Gi
 ---
 apiVersion: apps/v1
-kind: ReplicaSet
+kind: Deployment
 metadata:
   name: mongodbrs
 spec:
